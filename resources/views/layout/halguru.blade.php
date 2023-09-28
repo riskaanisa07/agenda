@@ -43,7 +43,7 @@
                             </button>
                             <div>
                                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <a class="d-none d-xl-inline-block ms-1" href="{{ ('kegiatan')}}" key="t-henry">ISI AGENDA</span>
+                                    <a class="d-none d-xl-inline-block ms-1" href="{{ ('/kegiatan/create')}}" key="t-henry">ISI AGENDA</span>
                                 </button>
                             <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

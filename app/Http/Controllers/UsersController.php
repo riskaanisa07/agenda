@@ -34,9 +34,9 @@ class UsersController extends Controller
             $request->session()->regenerate();
             $user = Auth::user();
             if($user->level == '1'){
-                return redirect()->intended('Dashboard_Admin');
+                return redirect()->intended('guru');
             }elseif($user->level == '2'){
-                return redirect()->intended('Dashboard_Guru');
+                return redirect()->intended('kegiatan/create');
             }
             return redirect()->intended('/');
         }

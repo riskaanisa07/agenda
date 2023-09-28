@@ -11,6 +11,6 @@ class AgendaController extends Controller
     {
 
         $guruk = guru::orderBy('id')->paginate(5);
-        return view('kegiatan.create', compact('guruk'))->with('guruk', $guruk);
+        return view('agenda.index', compact('guruk'))->with('guruk', $guruk);
     }
 }

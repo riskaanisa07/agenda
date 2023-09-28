@@ -31,21 +31,23 @@ class KegiatanController extends Controller
 
     public function store(Request $request)
     {
-        Session::flash('uraian_kegiatan', $request->uraian_kegiatan);
-        Session::flash('content', $request->content);
+        // Session::flash('uraian_kegiatan', $request->uraian_kegiatan);
+        // Session::flash('content', $request->content);
 
-        $request->validate([
+        // dd($request);
+
+        $validatedData = $request->validate([
+            'date_time'=>'required',
+            'jam_pembelajaran'=>'required',
+            'nama_mapel'=>'required',
+            'nama_kelas'=>'required',
             'uraian_kegiatan'=>'required',
             'content'=>'required',
-        ], [
-            'uraian_kegiatan.required' => 'uraian kegiatan wajib diisi',
-            'content.required' => 'bukti wajib diisi',
         ]);
-        $guruk = [
-            'uraian_kegiatan'=>$request->uraian_kegiatan,
-            'content'=>$request->content,
-        ];
-        Kegiatan::create($guruk);
+
+        $validatedData['content'] = $request->file('content')->store('bukti');
+
+        Agenda::create($validatedData);
         return redirect()->to('kegiatan')->with('success', 'Berhasil Menambahkan Guru');
     }
 

@@ -12,14 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('agenda', function (Blueprint $table) {
-            $table->increments('id_agenda');
-            $table->date('Hari_dan_Tanggal');
-            $table->integer('jam_ke');
-            $table->string('id_kelas')->unique();
-            $table->string('id_mapel')->unique();
+            $table->id('id');
+            $table->date('tanggal');
+            $table->integer('jam');
+            $table->foreignId('id_kelas')->unique();
+            $table->foreignId('id_mapel')->unique();
             $table->string('kegiatan');
             $table->string('bukti');
-            $table->string('tanda_tangan');
+            $table->string('tanda_tangan')->nullable();
             $table->timestamps();
         });
     }

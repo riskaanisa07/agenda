@@ -60,7 +60,7 @@ class GuruController extends Controller
             'kelas_id'=>$request->kelas_id,
             'email'=>$request->email,
             'username'=>$request->username,
-            'password'=>$request->password,
+            'password'=>bcrypt($request->password),
         ];
         guru::create($guruk);
         return redirect()->to('guru')->with('success', 'Berhasil Menambahkan Guru');
@@ -83,7 +83,7 @@ class GuruController extends Controller
         return view('guru.edit')->with('guruk', $guruk);
     }
 
-    /**
+    /**iata
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)

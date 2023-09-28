@@ -46,12 +46,12 @@
                                     <input id="uraian_kegiatan" name="uraian_kegiatan" type="text" value="{{ Session::get('uraian_kegiatan') }}" class="form-control" placeholder="masukan uraian kegiatan">
                                 </div>
                             </div>
-                            {{-- <div class="form-group row mb-4">
+                            <div class="form-group row mb-4">
                                 <label for="content" class="col-form-label col-lg-2">Bukti</label>
                                 <div class="col-lg-10">
                                     <input type="file" id="content" name="content" class="form-control" value="{{ Session::get('content') }}" placeholder="masukan bukti">
                                 </div>
-                            </div> --}}
+                            </div>
                             <div class="form-group row mb-4">
                                 <label for="Agama" class="col-form-label col-lg-2">Tanda Tangan</label>
                                 <div class="col-lg-10">
